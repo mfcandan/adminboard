@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
@@ -13,6 +13,10 @@ const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
   const [data, setData] = useState({});
   const [per, setPer] = useState(null);
+
+  useEffect(() => {
+    file && uploadFile();
+  }, [file]);
 
   const uploadFile = () => {
     const name = new Date().getTime() + file.name;
@@ -66,7 +70,6 @@ const New = ({ inputs, title }) => {
         ...data,
         timeStamp: serverTimestamp(),
       });
-      file && uploadFile();
     } catch (error) {
       console.log(error);
     }
