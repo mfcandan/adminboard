@@ -43,7 +43,7 @@
             align-items: center;
             gap: 10px;
 
-            .icon{
+            .icon {
               cursor: pointer;
             }
           }
@@ -59,7 +59,7 @@
             }
           }
 
-          button{
+          button {
             width: 150px;
             padding: 10px;
             border: none;
@@ -68,6 +68,11 @@
             font-weight: bold;
             cursor: pointer;
             margin-top: 10px;
+
+            &:disabled {
+              background-color: gray;
+              cursor: not-allowed;
+            }
           }
         }
       }
