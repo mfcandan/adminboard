@@ -8,11 +8,13 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import { auth, db, storage } from "../../firebase";
 import HourglassTopIcon from "@mui/icons-material/HourglassTop";
 import "./new.scss";
+import { useNavigate } from "react-router-dom";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
   const [data, setData] = useState({});
   const [per, setPer] = useState(null);
+  const navigate = useNavigate()
 
   useEffect(() => {
     file && uploadFile();
@@ -37,6 +39,9 @@ const New = ({ inputs, title }) => {
           case "running":
             console.log("Upload is running");
             break;
+            case "done":
+              console.log("Upload is done");
+              break;
           default:
             break;
         }
@@ -70,6 +75,7 @@ const New = ({ inputs, title }) => {
         ...data,
         timeStamp: serverTimestamp(),
       });
+      navigate(-1)
     } catch (error) {
       console.log(error);
     }
