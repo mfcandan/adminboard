@@ -14,40 +14,40 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .title{
+    .title {
       font-weight: bold;
       font-size: 14px;
-      color: rgb(177, 177, 177);
+      color: rgb(160, 160, 160);
     }
 
-    .counter{
+    .counter {
       font-size: 28px;
       font-weight: 300;
     }
 
-    .link{
+    .link {
       width: max-content;
       font-size: 12px;
       border-bottom: 1px solid gray;
     }
 
-    .percantage{
+    .percentage {
       display: flex;
       align-items: center;
       font-size: 14px;
 
-      &.positive{
+      &.positive {
         color: green;
       }
-      &.negative{
+      &.negative {
         color: red;
       }
     }
 
-    .icon{
+    .icon {
       font-size: 18px;
-      padding: 6px;
-      border-radius: 6px;
+      padding: 5px;
+      border-radius: 5px;
       align-self: flex-end;
     }
   }
